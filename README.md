@@ -28,11 +28,11 @@
 Modify the value of  MUT_IMP in PULP-Lite FPGA\vivado2020.2Project\RTL\noc\defaults.svh to Select the interconnection structure of PULP-Lite 
 
     `define MUT_IMPL 0      // xbar
-    `define MUT_IMPL 0      // bfly2
-    `define MUT_IMPL 0      // bfly4
-    `define MUT_IMPL 0      // clos_m2n
-    `define MUT_IMPL 0      // clos_m1n
-    `define MUT_IMPL 0      // clos_m0p5n
+    `define MUT_IMPL 1      // bfly2
+    `define MUT_IMPL 2      // bfly4
+    `define MUT_IMPL 3      // clos_m2n
+    `define MUT_IMPL 4      // clos_m1n
+    `define MUT_IMPL 5      // clos_m0p5n
 
 # 2. Restore the FPGA project
 To restore the project, follow the steps below on Vivado2020.2.
@@ -45,9 +45,9 @@ The FPGA is xcku060-ffva1156-2-i.
     5， Download BitStream to FPGA
 
 # 3. Prepare a computer that meets the requirements for compiling C code
-    1. Linux
-    2. riscv-gcc
-    3. python3
+    1. Ubuntu20.04.1
+    2. riscv32-unknown-elf-gcc 7.1.1
+    3. python3.8
 
 # 4. Modify PULP-Lite Ccode\Ccode\CNNMnist_v2\BUILD\file_c\debug.h to generate different code
 
