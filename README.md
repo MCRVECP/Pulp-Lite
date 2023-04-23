@@ -111,6 +111,12 @@ Please send mem_user.dat first, then rodata_user.dat.
     ```
 
 6. Open the C source code directory you want to compile and run, then use command ```make CAR``` to compile and run the C source code on GAP8 board. The command ```make CAR``` use the makefile to configure the experimental parameters according to our paper during the compilation process. This step must be done after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2 and connecting the GAP8 board. 
+    ```
+    GAP_SDK
+    8
+    cd <path to the C source code directory you want to compile and run>
+    make CAR
+    ```
 
 7. If the program has been run correctly, the terminal will print the data received from the serial port connected to GAP8 board. These data include running frequency (the default is 50MHz that is the same as Pulp-Lite), program results and the number of running cycles, which are the experiment results of GAP8. You can compare the program results to our result screenshots for verification and divide the number of running cycles by the running frequency to obtain program runtime of GAP8.
     
