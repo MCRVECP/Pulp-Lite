@@ -10,19 +10,6 @@
     │   └── vivado_Bitstream             // If it is failed to restore the project, you can download the Bitstream in the folder vivado_Bitstream.
 
 
-# Operation process
-
-    1, Choose the interconnection of PULP Lite
-    2, Restore the FPGA project        // If it is failed to restore the project, you can download the Bitstream in the folder PULP-Lite FPGA\vivado_Bitstream.
-    3, Prepare a computer that meets the requirements for compiling C code
-    4, Modify PULP-Lite Ccode\Ccode\CNNMnist_v2\BUILD\file_c\debug.h to generate different code.
-    5, Compile C code                  // If C code compilation fails, you can download the file from the folder PULP-Lite Ccode\download to PULP-Lite
-    6, Change the value of FPGA boot pin into boot mode
-    7, Connect the Uart pin to the PC
-    8, Download experimental program
-
-
-
 # 1. Choose Interconnection of PULP-Lite
 
 Modify the value of  MUT_IMP in PULP-Lite FPGA\vivado2020.2Project\RTL\noc\defaults.svh to Select the interconnection structure of PULP-Lite 
@@ -86,21 +73,21 @@ The definitions of all FPGA pins are located in "Pulp-Lite\PULP-Lite_FPGA\vivado
     After resetting PULP-Lite, the downloaded program will be executed. All experimental results will be automatically sent to the PC via Uart, including the machine learning algorithm inference results, program running time, and the number of accesses to on-chip interconnect ports.
 
 
-To Run the same algorithms on GAP8 for comparison, please follow the steps:
+# To Run the same algorithms on GAP8 for comparison, please follow the steps:
 
-1. Create a fresh Ubuntu 20.04 (Focal Fossa) 64-Bit virtual machine from OS-Boxes.
+    1. Create a fresh Ubuntu 20.04 (Focal Fossa) 64-Bit virtual machine from OS-Boxes.
 
-2. Copy GAP8 files to the directory for building the GAP8 development environment and open this directory. Then, run the GAP8_download.sh in super user mode to download the GAP8 development environment including GAP RISC-V toolchain and GAP SDK. After this step, the GAP_SDK will be added to the environment variable to configure the shell environment correctly for the GAP SDK.
+    2. Copy GAP8 files to the directory for building the GAP8 development environment and open this directory. Then, run the GAP8_download.sh in super user mode to download the GAP8 development environment including GAP RISC-V toolchain and GAP SDK. After this step, the GAP_SDK will be added to the environment variable to configure the shell environment correctly for the GAP SDK.
 
-3. Use the command of "GAP_SDK" (it has been added to the environment variable) to configure the shell environment correctly for the GAP SDK of GAPUINO_V2(Enter 8 to select GAPUINO_V2). It must be done before any terminal session for GAP8.
+    3. Use the command of "GAP_SDK" (it has been added to the environment variable) to configure the shell environment correctly for the GAP SDK of GAPUINO_V2(Enter 8 to select GAPUINO_V2). It must be done before any terminal session for GAP8.
 
-4. Run the GAP8_make.sh in super user mode to compile the GAP SDK after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2.
+    4. Run the GAP8_make.sh in super user mode to compile the GAP SDK after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2.
 
-5. Run the GAP8_test.sh to test the GAP8 development environment by compiling and running helloworld. This step must be done after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2 and connecting the GAP8 board.
+    5. Run the GAP8_test.sh to test the GAP8 development environment by compiling and running helloworld. This step must be done after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2 and connecting the GAP8 board.
 
-6. Open the C source code directory you want to compile and run, then use command "make CAR" to compile and run the C source code on GAP8 board. The command "make CAR" use the makefile to configure the experimental parameters according to our paper during the compilation process. This step must be done after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2 and connecting the GAP8 board. 
+    6. Open the C source code directory you want to compile and run, then use command "make CAR" to compile and run the C source code on GAP8 board. The command "make CAR" use the makefile to configure the experimental parameters according to our paper during the compilation process. This step must be done after configuring the shell environment correctly for the GAP SDK of GAPUINO_V2 and connecting the GAP8 board. 
 
-7. If the program has been run correctly, the terminal will print the data received from the serial port connected to GAP8 board. These data include running frequency (the default is 50MHz that is the same as Pulp-Lite), program results and the number of running cycles, which are the experiment results of GAP8. You can compare the program results to our result screenshots for verification and divide the number of running cycles by the running frequency to obtain program runtime of GAP8.
+    7. If the program has been run correctly, the terminal will print the data received from the serial port connected to GAP8 board. These data include running frequency (the default is 50MHz that is the same as Pulp-Lite), program results and the number of running cycles, which are the experiment results of GAP8. You can compare the program results to our result screenshots for verification and divide the number of running cycles by the running frequency to obtain program runtime of GAP8.
 
 For more details, please refer to readme.md in Pulp-Lite code directory.
 
