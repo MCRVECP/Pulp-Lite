@@ -1,10 +1,10 @@
 # File Introduction
     ├──GAP8
-    │   ├── CCode                   // CCode stores the GAP8 C source code of different algorithms (KNN, SVM, NB, LR, LSBoost) based on OpenMP
-    │   ├── Results                 // Results stores the screenshots after running different algorithms on GAP8 board
-    │   ├── GAP8_download.sh        // GAP8_download.sh is a linux shell script to download GAP8 development environment including risc-v toolchain and SDK
-    │   ├── GAP8_make.sh            // GAP8_make.sh is a linux shell script to compile the GAP SDK
-    │   ├── GAP8_test.sh            // GAP8_test.sh is a linux shell script to test the GAP8 development environment by compiling and running helloworld
+    │   ├── CCode                       // CCode stores the GAP8 C source code of different algorithms (KNN, SVM, NB, LR, LSBoost) based on OpenMP
+    │   ├── Results                     // Results stores the screenshots after running different algorithms on GAP8 board
+    │   ├── GAP8_download.sh            // GAP8_download.sh is a linux shell script to download GAP8 development environment including risc-v toolchain and SDK
+    │   ├── GAP8_make.sh                // GAP8_make.sh is a linux shell script to compile the GAP SDK
+    │   ├── GAP8_test.sh                // GAP8_test.sh is a linux shell script to test the GAP8 development environment by compiling and running helloworld
     │   ├── readme.md
     ├── PULP-Lite Ccode
     │   ├── Ccode                        // The C code of CNN, KNN, LR, LSBoost, SVM and NB
